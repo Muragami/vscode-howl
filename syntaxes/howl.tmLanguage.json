@@ -34,7 +34,18 @@
             },
             "name": "meta.block.howl",
             "patterns": [
-                { "include": "#code" }
+                { "include": "#code" },
+                {
+                    "name": "meta.block.parameters.wren",
+                    "begin": "(?<=\\{)\\s*\\|",
+                    "end": "\\|",
+                    "patterns": [
+                        {
+                            "name": "variable.parameter.function.wren",
+                            "match": "\\w+"
+                        }
+                    ]
+                }
             ]
         },
         "keyword": {
@@ -66,6 +77,10 @@
                 {
                     "name": "keyword.operator.assignment.howl",
                     "match": "(=|@=|=@)"
+                },
+                {
+                    "name": "keyword.operator.bitwise.wren",
+                    "match": "&|\\||\\^|<<|>>"
                 }
             ]
         },
