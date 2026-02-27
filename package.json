@@ -1,0 +1,25 @@
+{
+  "name": "howl",
+  "displayName": "howl",
+  "description": "howl language syntax highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "howl",
+      "aliases": ["Howl", "howl"],
+      "extensions": [".hw"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "howl",
+      "scopeName": "source.howl",
+      "path": "./syntaxes/howl.tmLanguage.json"
+    }]
+  }
+}
