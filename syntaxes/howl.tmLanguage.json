@@ -107,20 +107,26 @@
                     "match": "\\b(this|super)\\b"
                 },
                 {
-                    "name": "variable.other.class.howl",
-                    "match": "\\b__\\w*"
-                },
-                {
                     "name": "variable.other.instance.howl",
                     "match": "\\b_\\w*"
                 }
             ]
         },
         "field": {
+            "name": "meta.method.howl",
+            "begin": "(\\b_\\w*)",
+            "beginCaptures": {
+                "1": { "name": "variable.other.instance.howl" }
+            },
+            "end": ";",
             "patterns": [
                 {
-                    "name": "variable.other.instance.howl",
-                    "match": "\\b_\\w*"
+                    "name": "meta.method.body.howl",
+                    "begin": ":",
+                    "end": "(?=;)",
+                    "patterns": [
+                        { "include": "#code" }
+                    ]
                 }
             ]
         },
@@ -247,13 +253,20 @@
         },
         "class": {
             "name": "meta.class",
-            "begin": "(?:\\b(static)\\s+)?(\\bclass)\\s+(\\w+)\\s+(?:(\\bis)\\s+(\\w+))?",
+            "begin": "(?:\\b(static)\\s+)?(\\bclass)\\s+(\\w+)\\s+(?:(\\bis)\\s+(\\w+))\\s+(?:(\\baka)\\s+(\\w+(?:, *\\w+)))?",
             "beginCaptures": {
-                "1": { "name": "storage.modifier.howl" },
-                "2": { "name": "storage.modifier.howl" },
+                "1": { "name": "storage.modifier.static.howl" },
+                "2": { "name": "storage.type.class.howl" },
                 "3": { "name": "entity.name.class.howl" },
                 "4": { "name": "storage.modifier.howl" },
-                "5": { "name": "entity.name.class.howl" }
+                "5": { "name": "entity.name.class.howl" },
+                "6": { "name": "storage.modifier.howl" },
+                "7": { "name": "entity.name.class.howl" },
+                "8": { "name": "entity.name.class.howl" },
+                "9": { "name": "entity.name.class.howl" },
+                "10": { "name": "entity.name.class.howl" },
+                "11": { "name": "entity.name.class.howl" },
+                "12": { "name": "entity.name.class.howl" }
             },
             "end": ";",
             "endCaptures": {
@@ -272,8 +285,8 @@
                         { "include": "#blockComment" },
                         { "include": "#subscriptOperatorSetter" },
                         { "include": "#subscriptOperatorGetter" },
-                        { "include": "#method" },
-                        { "include": "#field" }
+                        { "include": "#field" },
+                        { "include": "#method" }
                     ],
                     "end": "(?=;)"
                 }
