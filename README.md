@@ -6,6 +6,8 @@ Simple syntax highlighting for the language howl in visual studio code
 
 Support for the particular code block brackets (: and ;) and additional functions like push and pull (@= and =@) of howl.
 
+![Howl syntax](img/howl%20syntax.png)
+
 ## Requirements
 
 None.
