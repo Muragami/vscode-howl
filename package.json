@@ -10,7 +10,7 @@
         "type": "git",
         "url": "https://github.com/Muragami/vscode-howl"
   },
-  "license": "See the license in LICENSE.md",
+  "license": "MIT, See the license in LICENSE",
   "bugs": {
         "url": "https://github.com/Muragami/vscode-howl/issues"
   },
