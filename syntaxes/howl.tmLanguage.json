@@ -253,7 +253,7 @@
         },
         "class": {
             "name": "meta.class",
-            "begin": "(?:\\b(static)\\s+)?(\\bclass)\\s+(\\w+)\\s+(?:(\\bis)\\s+(\\w+))\\s+(?:(\\baka)\\s+(\\w+(?:, *\\w+)))?",
+            "begin": "(?:\\b(static)\\s+)?(\\bclass)\\s+(\\w+)\\s+(?:(\\bis)\\s+(\\w+))\\s+(?:(\\baka)\\s+(\\w+(?:, *\\w+)*))?",
             "beginCaptures": {
                 "1": { "name": "storage.modifier.static.howl" },
                 "2": { "name": "storage.type.class.howl" },
